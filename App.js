@@ -5,6 +5,7 @@
  */
 
 import React, { Component } from 'react';
+import Component1 from './app/components/Component1';
 import {
   Platform,
   StyleSheet,
@@ -24,7 +25,7 @@ export default class App extends Component<{}> {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          Welcome to my app! 
         </Text>
         <Text style={styles.instructions}>
           To get started, edit App.js
@@ -32,6 +33,7 @@ export default class App extends Component<{}> {
         <Text style={styles.instructions}>
           {instructions}
         </Text>
+        <Component1 message="hellow world from component!"/>
       </View>
     );
   }
