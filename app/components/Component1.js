@@ -14,11 +14,24 @@ import {
 
 
 export default class Component1 extends Component<{}> {
+  constructor(props){
+    super(props);
+    this.state = {
+        name: "Ashutosh",
+        message: this.props.message
+    }
+  }
+
   render() {
+    let {message, name} = this.state;
+
     return (
       <View>
+         <Text>
+            {message}           
+        </Text> 
         <Text>
-            {this.props.message}           
+            {name}           
         </Text>
       </View>
     );

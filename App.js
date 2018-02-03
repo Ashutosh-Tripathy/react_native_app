@@ -6,6 +6,7 @@
 
 import React, { Component } from 'react';
 import Component1 from './app/components/Component1';
+import Component2 from './app/components/Component2';
 import {
   Platform,
   StyleSheet,
@@ -23,17 +24,21 @@ const instructions = Platform.select({
 export default class App extends Component<{}> {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to my app! 
+      <View>
+        <View>
+          <Text style={styles.welcome}>
+            Welcome to my app!
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
+          <Text style={styles.instructions}>
+            To get started, edit App.js
         </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
-        <Component1 message="hellow world from component!"/>
+          <Text style={styles.instructions}>
+            {instructions}
+          </Text>
+
+          <Component1 message="hellow world from component!" />
+          <Component2 message="hellow world from component!" />
+        </View>
       </View>
     );
   }
