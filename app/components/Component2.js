@@ -9,7 +9,8 @@ import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  TouchableHighlight
 } from 'react-native';
 
 
@@ -22,6 +23,10 @@ export default class Component1 extends Component<{}> {
     }
   }
 
+  onViewPress = () => {
+    console.log("View pressed.");
+  }
+
   render() {
     let { message, name } = this.state;
 
@@ -30,17 +35,23 @@ export default class Component1 extends Component<{}> {
         <View style={styles.myView}>
           <Text style={styles.myText}>
             This is text message.
-         </Text>
+            </Text>
         </View>
         <View style={styles.container}>
-          <View style={styles.v1}>
-            <Text>View 1</Text>
-          </View>
+          <TouchableHighlight style={styles.v1} onPress={this.onViewPress}>
+            <View>
+              <Text>View 1</Text>
+            </View>
+          </TouchableHighlight>
           <View style={styles.v2}>
-            <Text>View 2</Text>
+            <Text>
+              View 2
+            </Text>
           </View>
           <View style={styles.v3}>
-            <Text>View 3</Text>
+            <Text>
+              View 3
+            </Text>
           </View>
         </View>
       </View>
@@ -71,7 +82,7 @@ const styles = StyleSheet.create({
   },
   v3: {
     flex: 1,
-    backgroundColor: 'blue',
+    backgroundColor: 'yellow',
     padding: 10
   }
 });
