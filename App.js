@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import Component1 from './app/components/Component1';
 import Component2 from './app/components/Component2';
 import Component3 from './app/components/Component3';
+import Component4 from './app/components/Component4';
 import {
   Platform,
   StyleSheet,
@@ -40,6 +41,7 @@ export default class App extends Component<{}> {
           <Component1 message="hellow world from component!" />
           <Component2 message="hellow world from component!" />
           <Component3 message="hellow world from component!" />
+          <Component4 message="hellow world from component!" />
         </View>
       </View>
     );

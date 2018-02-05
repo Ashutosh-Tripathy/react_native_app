@@ -10,7 +10,8 @@ import {
   StyleSheet,
   Text,
   View,
-  TextInput
+  TextInput,
+  Switch
 } from 'react-native';
 
 
@@ -19,12 +20,20 @@ export default class Component3 extends Component<{}> {
     super(props);
     this.state = {
       textValue: "Hi Ashutosh!",
+      switchValue: false
     }
   }
 
   onChangeText = (value) => {
     this.setState({
       textValue: value
+    });
+  }
+
+  onSwitchChange = (value) => {
+    console.log(`Switch value chagnee to ${value}`);
+    this.setState({
+      switchValue: value
     })
   }
 
@@ -35,6 +44,7 @@ export default class Component3 extends Component<{}> {
         <TextInput value={this.state.textValue} placeholder="Enter text" onChangeText={(value) => this.onChangeText(value)}>
         </TextInput>
         <Text>{this.state.textValue}</Text>
+        <Switch value={this.state.switchValue} onValueChange={(value) => this.onSwitchChange(value)} />
       </View>
     );
   }
