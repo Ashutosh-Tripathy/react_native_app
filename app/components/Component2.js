@@ -10,7 +10,8 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableHighlight
+  TouchableHighlight,
+  TouchableOpacity
 } from 'react-native';
 
 
@@ -27,6 +28,10 @@ export default class Component1 extends Component<{}> {
     console.log("View pressed.");
   }
 
+  onViewPress2 = () => {
+    console.log("View pressed 2");
+  }
+
   render() {
     let { message, name } = this.state;
 
@@ -38,16 +43,18 @@ export default class Component1 extends Component<{}> {
             </Text>
         </View>
         <View style={styles.container}>
-          <TouchableHighlight style={styles.v1} onPress={this.onViewPress}>
+          <TouchableHighlight style={styles.v1} onPress={this.onViewPress} underlayColor="blue">
             <View>
               <Text>View 1</Text>
             </View>
           </TouchableHighlight>
-          <View style={styles.v2}>
-            <Text>
-              View 2
+          <TouchableOpacity onPress={this.onViewPress2} style={styles.v2}>
+            <View>
+              <Text>
+                View 2
             </Text>
-          </View>
+            </View>
+          </TouchableOpacity>
           <View style={styles.v3}>
             <Text>
               View 3
