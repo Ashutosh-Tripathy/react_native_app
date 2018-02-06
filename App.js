@@ -28,40 +28,31 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-const navigationOptions = {
-  title: 'Welcome',
-};
+const RootStack = StackNavigator({
+  Home: {
+    screen: Component1,
+  },
+  Component2: {
+    screen: Component2
+  },
+  Component3: {
+    screen: Component3
+  },
+  Component4: {
+    screen: Component4
+  },
+  Component5: {
+    screen: Component5
+  }
+},
+  {
+    initialRouteName: 'Home',
+  });
+
 
 export default class App extends Component<{}> {
   render() {
-    return (
-      <View>
-        <View>
-          <Text style={styles.welcome}>
-            Welcome to my app!
-        </Text>
-          <Text style={styles.instructions}>
-            To get started, edit App.js
-        </Text>
-          <Text style={styles.instructions}>
-            {instructions}
-          </Text>
-
-          <Component1 message="hellow world from component!" />
-          <Component2 message="hellow world from component!" />
-          <Component3 message="hellow world from component!" />
-          <Component4 message="hellow world from component!" />
-          <Component5 message="hellow world from component!" />
-
-          <Button
-            title="Go to Jane's profile"
-            onPress={() => { }
-            }
-          />
-
-        </View>
-      </View>
-    );
+    return <RootStack />;
   }
 }
 

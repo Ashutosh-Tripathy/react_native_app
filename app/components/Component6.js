@@ -76,4 +76,4 @@ const styles = StyleSheet.create({
   rowText: {
     flex: 1
   }
-}
+});

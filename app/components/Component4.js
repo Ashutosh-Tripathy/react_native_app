@@ -18,8 +18,8 @@ import {
 
 const users = [
   { name: 'Ashutosh Tripathy' },
-  { name: 'Shubhangini' },
-  { name: 'Suman' },
+  { name: 'Anuj' },
+  { name: 'Praveen' },
   { name: 'Satya Prakash' },
   { name: 'Vishnu Deo' },
 ];
