@@ -10,6 +10,7 @@ import Component2 from './app/components/Component2';
 import Component3 from './app/components/Component3';
 import Component4 from './app/components/Component4';
 import Component5 from './app/components/Component5';
+import Component6 from './app/components/Component6';
 import {
   Platform,
   StyleSheet,
@@ -43,10 +44,13 @@ const RootStack = StackNavigator({
   },
   Component5: {
     screen: Component5
+  },
+  Component6: {
+    screen: Component6
   }
 },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Component5',
   });
 
 

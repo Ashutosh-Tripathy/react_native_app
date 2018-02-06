@@ -11,7 +11,8 @@ import {
   Text,
   View,
   TextInput,
-  ListView
+  ListView,
+  TouchableHighlight
 } from 'react-native';
 
 
@@ -47,9 +48,15 @@ export default class Component5 extends Component<{}> {
       })
   }
 
+  onUserPress = (user) => {
+    this.props.navigation.navigate('Component3', { user });
+  }
+
   renderRow = (user) => {
     return (<View style={styles.row}>
-      <Text style={styles.rowText}>{user.name}</Text>
+      <TouchableHighlight onPress={(user) => this.props.navigation.navigate('Component3', { user })} >
+        <Text style={styles.rowText}>{user.name}</Text>
+      </TouchableHighlight>
     </View>);
   }
 

@@ -15,51 +15,26 @@ import {
   Navigator
 } from 'react-native';
 
-
-
-const users = [
-  { name: 'Ashutosh Tripathy' },
-  { name: 'Shubhangini' },
-  { name: 'Suman' },
-  { name: 'Satya Prakash' },
-  { name: 'Vishnu Deo' },
-];
 export default class Component6 extends Component<{}> {
 
-  constructor() {
-    super();
-    const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
-    this.state = {
-      userDataSource: ds
-    };
-  }
-
-  componentDidMount() {
-    this.fetchUsers();
-  }
-
-  fetchUsers = () => {
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((res) => res.json())
-      .then((res) => {
-        this.setState({
-          userDataSource: this.state.userDataSource.cloneWithRows(res)
-        })
-      })
-  }
-
-  renderRow = (user) => {
-    return (<View style={styles.row}>
-      <Text style={styles.rowText}>{user.name}</Text>
-    </View>);
+  constructor(props) {
+    super(props);
   }
 
   render() {
+    const { params } = this.props.navigation.state;
+    const user = params ? params.user : {};
+    const a= JSON.stringify(params);
+    const b= JSON.stringify(user);
+    console.log(`params: ${a} \n\n user: ${b}`);
     return (
       <View>
-        <Text>
-          Details
-        </Text>
+        <Text>Name: {user.name}</Text>
+        <Text>Username: {user.username}</Text>
+        <Text>Email: {user.email}</Text>
+        <Text>Phone: {user.phone}</Text>
+        <Text>Website: {user.website}</Text>
+        <Text>Company: {user.company ? user.company.name : ""}</Text>
       </View>
     );
   }
