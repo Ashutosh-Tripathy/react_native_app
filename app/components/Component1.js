@@ -19,7 +19,7 @@ export default class Component1 extends Component<{}> {
     super(props);
     this.state = {
       name: "Ashutosh",
-      message: this.props.message
+      message: this.props.message || "This is home page."
     }
   }
 

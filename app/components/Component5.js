@@ -49,15 +49,17 @@ export default class Component5 extends Component<{}> {
   }
 
   onUserPress = (user) => {
-    this.props.navigation.navigate('Component3', { user });
+    this.props.navigation.navigate('Component6', { user });
   }
 
   renderRow = (user) => {
-    return (<View style={styles.row}>
-      <TouchableHighlight onPress={(user) => this.props.navigation.navigate('Component3', { user })} >
-        <Text style={styles.rowText}>{user.name}</Text>
+    return (
+      <TouchableHighlight onPress={this.onUserPress.bind(this, user)} >
+        <View style={styles.row}>
+          <Text style={styles.rowText}>{user.name}</Text>
+        </View>
       </TouchableHighlight>
-    </View>);
+    );
   }
 
   render() {

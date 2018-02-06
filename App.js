@@ -50,7 +50,7 @@ const RootStack = StackNavigator({
   }
 },
   {
-    initialRouteName: 'Component5',
+    initialRouteName: 'Home',
   });
 
 

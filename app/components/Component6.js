@@ -24,17 +24,14 @@ export default class Component6 extends Component<{}> {
   render() {
     const { params } = this.props.navigation.state;
     const user = params ? params.user : {};
-    const a= JSON.stringify(params);
-    const b= JSON.stringify(user);
-    console.log(`params: ${a} \n\n user: ${b}`);
     return (
       <View>
-        <Text>Name: {user.name}</Text>
-        <Text>Username: {user.username}</Text>
-        <Text>Email: {user.email}</Text>
-        <Text>Phone: {user.phone}</Text>
-        <Text>Website: {user.website}</Text>
-        <Text>Company: {user.company ? user.company.name : ""}</Text>
+        <Text style={styles.row}>Name: {user.name}</Text>
+        <Text style={styles.row}>Username: {user.username}</Text>
+        <Text style={styles.row}>Email: {user.email}</Text>
+        <Text style={styles.row}>Phone: {user.phone}</Text>
+        <Text style={styles.row}>Website: {user.website}</Text>
+        <Text style={styles.row}>Company: {user.company ? user.company.name : ""}</Text>
       </View>
     );
   }
@@ -45,10 +42,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     padding: 10,
-    backgroundColor: '#a0c0f7',
+    backgroundColor: '#8ae587',
     marginBottom: 3
   },
-  rowText: {
-    flex: 1
-  }
 });
