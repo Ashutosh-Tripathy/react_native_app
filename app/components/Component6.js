@@ -11,7 +11,8 @@ import {
   Text,
   View,
   TextInput,
-  ListView
+  ListView,
+  Navigator
 } from 'react-native';
 
 
@@ -23,14 +24,28 @@ const users = [
   { name: 'Satya Prakash' },
   { name: 'Vishnu Deo' },
 ];
-export default class Component4 extends Component<{}> {
+export default class Component6 extends Component<{}> {
 
   constructor() {
     super();
     const ds = new ListView.DataSource({ rowHasChanged: (r1, r2) => r1 !== r2 });
     this.state = {
-      userDataSource: ds.cloneWithRows(users),
+      userDataSource: ds
     };
+  }
+
+  componentDidMount() {
+    this.fetchUsers();
+  }
+
+  fetchUsers = () => {
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          userDataSource: this.state.userDataSource.cloneWithRows(res)
+        })
+      })
   }
 
   renderRow = (user) => {
@@ -41,7 +56,11 @@ export default class Component4 extends Component<{}> {
 
   render() {
     return (
-      <ListView dataSource={this.state.userDataSource} renderRow={this.renderRow.bind(this)} />
+      <View>
+        <Text>
+          Details
+        </Text>
+      </View>
     );
   }
 }
@@ -57,4 +76,4 @@ const styles = StyleSheet.create({
   rowText: {
     flex: 1
   }
-});
+}

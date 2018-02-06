@@ -9,12 +9,17 @@ import Component1 from './app/components/Component1';
 import Component2 from './app/components/Component2';
 import Component3 from './app/components/Component3';
 import Component4 from './app/components/Component4';
+import Component5 from './app/components/Component5';
 import {
   Platform,
   StyleSheet,
   Text,
-  View
+  View,
+  Button
 } from 'react-native';
+import {
+  StackNavigator,
+} from 'react-navigation';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -22,6 +27,10 @@ const instructions = Platform.select({
   android: 'Double tap R on your keyboard to reload,\n' +
     'Shake or press menu button for dev menu',
 });
+
+const navigationOptions = {
+  title: 'Welcome',
+};
 
 export default class App extends Component<{}> {
   render() {
@@ -42,6 +51,14 @@ export default class App extends Component<{}> {
           <Component2 message="hellow world from component!" />
           <Component3 message="hellow world from component!" />
           <Component4 message="hellow world from component!" />
+          <Component5 message="hellow world from component!" />
+
+          <Button
+            title="Go to Jane's profile"
+            onPress={() => { }
+            }
+          />
+
         </View>
       </View>
     );
